@@ -1,0 +1,11 @@
+#Ejercicio 1
+library(gapminder)
+library(ggplot2)
+library(t)
+length(levels(gapminder$continent))
+
+past_year <- 1970
+p <- gapminder %>%
+  filter(year == past_year & !is.na(gdp)) %>%
+  ggplot(aes(continent, dollars_per_day))
+p + geom_boxplot()
